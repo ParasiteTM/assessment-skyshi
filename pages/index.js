@@ -24,25 +24,43 @@ const index = () => {
   }, []);
 
   const handleAddActivity = async () => {
-    fetch('https://todo.api.devcode.gethired.id/activity-groups', {
-      method: 'POST',
-      body: JSON.stringify({
-        email: 'roberto30nembhwani@gmail.com',
-        title: 'New Activity',
-      }),
-      headers: {
-        'content-type': 'application/json',
-      },
-    })
-      .then((res) => res.json())
-      .then((res) =>
-        addNewActivity({
-          id: res.id,
-          title: res.title,
-          created_at: res.created_at,
-        })
-      )
-      .then(setShowEmpty(false));
+    // fetch('https://todo.api.devcode.gethired.id/activity-groups', {
+    //   method: 'POST',
+    //   body: JSON.stringify({
+    //     email: 'roberto30nembhwani@gmail.com',
+    //     title: 'New Activity',
+    //   }),
+    //   headers: {
+    //     'content-type': 'application/json',
+    //   },
+    // })
+    //   .then((res) => res.json())
+    //   .then((res) =>
+    //     addNewActivity({
+    //       id: res.id,
+    //       title: res.title,
+    //       created_at: res.created_at,
+    //     })
+    //   )
+    //   .then(setShowEmpty(false));
+
+    try {
+      await fetch('https://todo.api.devcode.gethired.id/activity-groups', {
+        method: 'POST',
+        body: JSON.stringify({
+          email: 'roberto30nembhwani@gmail.com',
+          title: 'New Activity',
+        }),
+        headers: {
+          'content-type': 'application/json',
+        },
+      });
+
+      let dataFromSever = await getInitialActivity();
+      setActivity(dataFromSever);
+    } catch (err) {
+      console.error(err);
+    }
   };
   return (
     <main className="index">
