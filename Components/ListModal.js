@@ -27,6 +27,7 @@ const DropDown = ({
       {showDropDown ? (
         <div className="dropDownOptionsContainer">
           <div
+            data-cy="modal-add-priority-item"
             onClick={() => handleDropDownChange('very-high')}
             className={`dropDownOption ${
               currentDropDown === 'very-high' ? 'active' : ''
@@ -38,6 +39,7 @@ const DropDown = ({
             <h3>Very High</h3>
           </div>
           <div
+            data-cy="modal-add-priority-item"
             onClick={() => handleDropDownChange('high')}
             className={`dropDownOption ${
               currentDropDown === 'high' ? 'active' : ''
@@ -49,6 +51,7 @@ const DropDown = ({
             <h3>High</h3>
           </div>
           <div
+            data-cy="modal-add-priority-item"
             onClick={() => handleDropDownChange('medium')}
             className={`dropDownOption ${
               currentDropDown === 'medium' ? 'active' : ''
@@ -60,6 +63,7 @@ const DropDown = ({
             <h3>medium</h3>
           </div>
           <div
+            data-cy="modal-add-priority-item"
             onClick={() => handleDropDownChange('low')}
             className={`dropDownOption ${
               currentDropDown === 'low' ? 'active' : ''
@@ -71,6 +75,7 @@ const DropDown = ({
             <h3>low</h3>
           </div>
           <div
+            data-cy="modal-add-priority-item"
             onClick={() => handleDropDownChange('very-low')}
             className={`dropDownOption ${
               currentDropDown === 'very-low' ? 'active' : ''
@@ -129,10 +134,14 @@ const ListModal = () => {
       .then(disableListModal());
   };
   return (
-    <div className="listModalContainer" onClick={disableListModal}>
+    <div
+      className="listModalContainer"
+      onClick={disableListModal}
+      data-cy="modal-add"
+    >
       <div className="listModalCard" onClick={(e) => e.stopPropagation()}>
         <div className="listHeader">
-          <h2>Tambah list item</h2>
+          <h2 data-cy="modal-add-title">Tambah list item</h2>
           <img
             src="/modal-add-close-button.png"
             alt="Close Modal"
@@ -141,16 +150,17 @@ const ListModal = () => {
         </div>
         <div className="inputsContainer">
           <div className="listName">
-            <span>nama list item</span>
+            <span data-cy="modal-add-name-title">nama list item</span>
             <input
               type="text"
               placeholder="Tambahkan nama Activity"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
+              data-cy="modal-add-name-input"
             />
           </div>
           <div className="priority">
-            <span>priority</span>
+            <span data-cy="modal-add-priority-title">priority</span>
             <DropDown
               currentDropDown={currentDropDown}
               setCurrentDropDown={setCurrentDropDown}
@@ -160,6 +170,7 @@ const ListModal = () => {
           </div>
           <div className="buttonContainer">
             <button
+              data-cy="modal-add-save-button"
               onClick={handleListSubmit}
               disabled={inputValue.length <= 0}
               className={`${inputValue.length > 0 ? 'allowed' : ''}`}

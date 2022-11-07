@@ -47,7 +47,7 @@ const index = () => {
   return (
     <main className="index">
       <div className="container mainHeader">
-        <h2>Activity</h2>
+        <h2 data-cy="activity-title">Activity</h2>
         <button onClick={handleAddActivity}>+ Tambah</button>
       </div>
       <div className="container content">

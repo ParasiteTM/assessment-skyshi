@@ -216,6 +216,9 @@ a {
       img {
         width: 24px;
         height: 24px;
+        &:hover {
+          cursor: pointer;
+        }
       }
       input {
         font-size: 36px;
@@ -307,6 +310,9 @@ a {
           }
         }
       }
+    }
+    .emptyContainer {
+      margin-top: 20px;
     }
   }
 }

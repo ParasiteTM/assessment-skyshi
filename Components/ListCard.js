@@ -23,7 +23,7 @@ const ListCard = ({ item }) => {
   };
 
   return (
-    <div className="listCard">
+    <div className="listCard" data-cy="todo-item">
       <input
         type="checkbox"
         className="checkbox"
@@ -37,6 +37,7 @@ const ListCard = ({ item }) => {
         <img src="/todo-title-edit-button.png" alt="" />
       </div>
       <img
+        data-cy="todo-item-delete-button"
         src="/trash.png"
         alt="delete"
         onClick={() => {

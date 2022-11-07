@@ -71,21 +71,30 @@ const index = () => {
     <div className="listContainer">
       <div className="container header">
         <div className="left">
-          <img src="/todo-back-button.png" alt="Back" />
+          <img
+            src="/todo-back-button.png"
+            alt="Back"
+            onClick={() => router.push('/')}
+            data-cy="todo-back-button"
+          />
           {allowEdit ? (
             <input
               value={currentListInfo.title}
               onChange={(e) => setCurrentListTitle(e.target.value)}
               onBlur={handleEditTitle}
               autoFocus
+              data-cy="todo-title"
             />
           ) : (
-            <h2 onClick={toggleAllowEdit}>{currentListInfo.title}</h2>
+            <h2 onClick={toggleAllowEdit} data-cy="todo-title">
+              {currentListInfo.title}
+            </h2>
           )}
           <img
             src="/todo-title-edit-button.png"
             alt="Edit Title"
             onClick={toggleAllowEdit}
+            data-cy="todo-title-edit-button"
           />
         </div>
         <div className="right">
@@ -96,7 +105,9 @@ const index = () => {
       </div>
       <div className="container listContent">
         {showEmpty ? (
-          <img src="/todo-empty-state.png" className="empty-activity" />
+          <div className="emptyContainer" data-cy="todo-empty-state">
+            <img src="/todo-empty-state.png" className="empty-activity" />
+          </div>
         ) : (
           <div className="listContentContainer">
             {currentListInfo.todo_items

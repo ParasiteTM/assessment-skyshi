@@ -20,13 +20,18 @@ const ActivityCard = ({ item }) => {
   });
 
   return (
-    <div className="activityCard">
+    <div className="activityCard" data-cy="activity-item">
       <Link href={`/details/${item.id}`}>
-        <h2>{item.title}</h2>
+        <h2 data-cy="activity-item-title">{item.title}</h2>
       </Link>
       <div className="cardFooter">
-        <span>{formatedDate}</span>
-        <img src="trash.png" alt="" onClick={handleDelete} />
+        <span data-cy="activity-item-date">{formatedDate}</span>
+        <img
+          src="trash.png"
+          alt=""
+          onClick={handleDelete}
+          data-cy="activity-item-delete-button"
+        />
       </div>
     </div>
   );

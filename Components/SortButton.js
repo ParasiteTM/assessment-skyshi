@@ -19,6 +19,7 @@ const SortButton = () => {
         src="/todo-sort-button.png"
         alt=""
         onClick={() => setShowDropDown((prev) => !prev)}
+        data-cy="todo-sort-button"
       />
 
       {showDropDown ? (
@@ -28,45 +29,64 @@ const SortButton = () => {
             className={`actionButtons ${
               currentSortMode === 'terbaru' ? 'active' : ''
             }`}
+            data-cy={`sort-selection ${
+              currentSortMode === 'terbaru'
+                ? 'sort-selection-selected'
+                : 'false'
+            }`}
           >
-            <img src="/sort/terbaru.png" alt="" />
-            <h3>Terbaru</h3>
+            <img data-cy="sort-selection-icon" src="/sort/terbaru.png" alt="" />
+            <h3 data-cy="sort-selection-title">Terbaru</h3>
           </div>
           <div
             onClick={() => setCurrentSortMode('terlama')}
             className={`actionButtons ${
               currentSortMode === 'terlama' ? 'active' : ''
             }`}
+            data-cy={`sort-selection ${
+              currentSortMode === 'terlama'
+                ? 'sort-selection-selected'
+                : 'false'
+            }`}
           >
-            <img src="/sort/terbaru.png" alt="" />
-            <h3>Terlama</h3>
+            <img data-cy="sort-selection-icon" src="/sort/terbaru.png" alt="" />
+            <h3 data-cy="sort-selection-title">Terlama</h3>
           </div>
           <div
             onClick={() => setCurrentSortMode('a-z')}
             className={`actionButtons ${
               currentSortMode === 'a-z' ? 'active' : ''
             }`}
+            data-cy={`sort-selection ${
+              currentSortMode === 'a-z' ? 'sort-selection-selected' : 'false'
+            }`}
           >
-            <img src="/sort/terbaru.png" alt="" />
-            <h3>A-Z</h3>
+            <img data-cy="sort-selection-icon" src="/sort/terbaru.png" alt="" />
+            <h3 data-cy="sort-selection-title">A-Z</h3>
           </div>
           <div
             onClick={() => setCurrentSortMode('z-a')}
             className={`actionButtons ${
               currentSortMode === 'z-a' ? 'active' : ''
             }`}
+            data-cy={`sort-selection ${
+              currentSortMode === 'z-a' ? 'sort-selection-selected' : 'false'
+            }`}
           >
-            <img src="/sort/terbaru.png" alt="" />
-            <h3>Z-A</h3>
+            <img data-cy="sort-selection-icon" src="/sort/terbaru.png" alt="" />
+            <h3 data-cy="sort-selection-title">Z-A</h3>
           </div>
           <div
             onClick={() => setCurrentSortMode('belum')}
             className={`actionButtons ${
               currentSortMode === 'belum' ? 'active' : ''
             }`}
+            data-cy={`sort-selection ${
+              currentSortMode === 'belum' ? 'sort-selection-selected' : 'false'
+            }`}
           >
-            <img src="/sort/terbaru.png" alt="" />
-            <h3>Belum Selesai</h3>
+            <img data-cy="sort-selection-icon" src="/sort/terbaru.png" alt="" />
+            <h3 data-cy="sort-selection-title">Belum Selesai</h3>
           </div>
         </div>
       ) : (
