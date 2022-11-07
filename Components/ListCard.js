@@ -30,11 +30,24 @@ const ListCard = ({ item }) => {
         value={isCompleted}
         defaultChecked={isCompleted}
         onChange={handleCheckboxChange}
+        data-cy="todo-item-checkbox"
       />
       <div className="priorityContainer">
-        <div className={`priority ${item.priority}`}></div>
-        <h3 className={`${isCompleted ? 'completed' : ''}`}>{item.title}</h3>
-        <img src="/todo-title-edit-button.png" alt="" />
+        <div
+          className={`priority ${item.priority}`}
+          data-cy="todo-item-priority-indicator"
+        ></div>
+        <h3
+          className={`${isCompleted ? 'completed' : ''}`}
+          data-cy="todo-item-title"
+        >
+          {item.title}
+        </h3>
+        <img
+          src="/todo-title-edit-button.png"
+          alt=""
+          data-cy="todo-item-delete-button"
+        />
       </div>
       <img
         data-cy="todo-item-delete-button"
