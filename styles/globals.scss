@@ -590,14 +590,23 @@ a {
   }
 }
 
-// &.active {
-//   background-color: #2684ff;
-//   color: white;
-// }
+.completeDeleteCard {
+  width: 490px;
+  border-radius: 12px;
+  padding: 20px 30px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  background-color: white;
+  gap: 13px;
+  img {
+    width: 18px;
+    height: 18px;
+  }
 
-// &:hover {
-//   cursor: pointer;
-// }
-// &:hover:not(.active) {
-//   background-color: #deebff;
-// }
+  h2 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #111111;
+  }
+}
