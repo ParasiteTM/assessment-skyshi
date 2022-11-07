@@ -100,7 +100,9 @@ const index = () => {
         <div className="right">
           <SortButton />
 
-          <button onClick={activateListModal}>+ Tambah</button>
+          <button onClick={activateListModal} data-cy="todo-add-button">
+            + Tambah
+          </button>
         </div>
       </div>
       <div className="container listContent">
