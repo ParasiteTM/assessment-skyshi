@@ -48,7 +48,9 @@ const index = () => {
     <main className="index">
       <div className="container mainHeader">
         <h2 data-cy="activity-title">Activity</h2>
-        <button onClick={handleAddActivity}>+ Tambah</button>
+        <button onClick={handleAddActivity} data-cy="activity-add-button">
+          + Tambah
+        </button>
       </div>
       <div className="container content">
         {showEmpty ? (
