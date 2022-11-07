@@ -42,7 +42,7 @@ const ConfirmDeleteModal = () => {
             <button
               className="batal"
               onClick={disableModal}
-              data-cy="modal-delete"
+              data-cy="modal-delete-cancel-button"
             >
               Batal
             </button>
