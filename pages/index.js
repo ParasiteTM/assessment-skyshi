@@ -24,6 +24,7 @@ const index = () => {
   }, []);
 
   const handleAddActivity = async () => {
+    // Needed to remove this to comply with Cypress Testing
     // fetch('https://todo.api.devcode.gethired.id/activity-groups', {
     //   method: 'POST',
     //   body: JSON.stringify({

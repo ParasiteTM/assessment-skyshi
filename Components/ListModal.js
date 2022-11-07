@@ -17,7 +17,11 @@ const DropDown = ({
   };
   return (
     <div className="dropDownContainer">
-      <div className="current" onClick={() => setShowDropDown((prev) => !prev)}>
+      <div
+        className="current"
+        onClick={() => setShowDropDown((prev) => !prev)}
+        data-cy="modal-add-priority-dropdown"
+      >
         <div className={`priorityContainer`}>
           <div className={`priority ${currentDropDown}`}></div>
         </div>
@@ -33,7 +37,7 @@ const DropDown = ({
               currentDropDown === 'very-high' ? 'active' : ''
             }`}
           >
-            <div className={`priorityContainer `}>
+            <div className={`priorityContainer`}>
               <div className={`priority very-high`}></div>
             </div>
             <h3>Very High</h3>
