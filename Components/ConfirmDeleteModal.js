@@ -19,18 +19,30 @@ const ConfirmDeleteModal = () => {
   };
   return (
     <div className="deleteModalContainer" onClick={disableModal}>
-      <div className="deleteModalCard" onClick={(e) => e.stopPropagation()}>
-        <img src="delete.png" alt="" />
+      <div
+        className="deleteModalCard"
+        onClick={(e) => e.stopPropagation()}
+        data-cy="todo-modal-delete"
+      >
+        <img src="delete.png" alt="" data-cy="modal-delete-icon" />
 
-        <h2>
+        <h2 data-cy="modal-delete-title">
           Apakah anda yakin menghapus activity
           <span>{`"${currentDeleteTarget.title}?"`}</span>
         </h2>
         <div className="buttonContainer">
-          <button className="batal" onClick={disableModal}>
+          <button
+            className="batal"
+            onClick={disableModal}
+            data-cy="modal-delete-cancel-button"
+          >
             Batal
           </button>
-          <button className="hapus" onClick={removeElement}>
+          <button
+            className="hapus"
+            onClick={removeElement}
+            data-cy="modal-delete-confirm-button"
+          >
             Hapus
           </button>
         </div>
